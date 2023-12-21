@@ -6,8 +6,16 @@ import java.math.BigDecimal;
 public class Employee extends Person {
 
     public enum Job {
-        Manager,
-        Worker
+        CEO,
+        VaultKeeper,
+        Programmer,
+        Lawyer,
+        Cashier,
+        Manager;
+
+        public static Job getRandom() {
+            return values()[(int) (Math.random() * values().length)];
+        }
     }
 
     private Job job;
@@ -48,7 +56,7 @@ public class Employee extends Person {
         return "Employee:{" +
                 "\n person='" + super.toString() + "'" +
                 ",\n job='" + getJob() + "'" +
-                ",\n bank='" + getBank() + "'" +
+                ",\n bank='" + getBank().getName() + "'" +
                 ",\n isWorkingFromHome='" + isIsWorkingFromHome() + "'" +
                 ",\n bankOffice='" + getBankOffice() + "'" +
                 ",\n isCreditAvailable='" + isIsCreditAvailable() + "'" +
