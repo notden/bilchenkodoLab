@@ -3,6 +3,7 @@ package tech.reliab.course.bilchenkodo.bank.service;
 import java.math.BigDecimal;
 import java.util.List;
 
+
 import tech.reliab.course.bilchenkodo.bank.entity.Bank;
 import tech.reliab.course.bilchenkodo.bank.entity.BankOffice;
 import tech.reliab.course.bilchenkodo.bank.entity.CreditAccount;
@@ -68,4 +69,7 @@ public interface BankService {
 
     // Возвращает список офисов, подходящих для выдачи указанной суммы в банке
     public List<BankOffice> getBankOfficeSuitableInBank(Bank bank, BigDecimal money) throws NotFoundException;
+
+    // Переводит клиента в другой банк
+    public boolean transferClient(Client client, int newBankId);
 }
